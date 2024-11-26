@@ -86,7 +86,6 @@ for /f "delims=" %%a in ('cmd /C tar -tf "%zipFile%" ^| findstr /C:.mvn/wrapper/
     set "hasWrapperPropertiesFileEntry=%%a"
 )
 if not defined hasWrapperPropertiesFileEntry goto zipFormatNotValid
-set wrapperDistributionUrl=https://mirrors.aliyun.com/macports/distfiles/maven3/
 set wrapperPropertiesFile=.mvn\wrapper\maven-wrapper.properties
 goto checkZipFileEnd
 
@@ -112,6 +111,9 @@ for /F "usebackq eol=# tokens=1,2 delims==" %%a in ("%wrapperPropertiesFilePath%
 		set wrapperFileName=%%~nxb
 	)
 )
+set remaining_string=%wrapperFileName:~13%
+set version=%remaining_string:~0,5%
+set wrapperDistributionUrl=https://mirrors.aliyun.com/apache/maven/maven-3/%version%/binaries/
 set defaultDistributionUrl=distributionUrl=%defaultDistributionUrl%
 set replacedDistributionUrl=distributionUrl=%wrapperDistributionUrl%%wrapperFileName%
 echo %INFO_LOG% The default distributionUrl will be replaced with %wrapperDistributionUrl%%wrapperFileName%.
