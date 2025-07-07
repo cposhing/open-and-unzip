@@ -39,7 +39,7 @@ uao ${Artifact}.zip
 ### Skip Wrapper Mirror Replacement
 
 > Default Behavior: After extraction, the script will replace the default Maven and Gradle Wrapper mirrors
-> with [Alibaba Cloud Mirrors](https://developer.aliyun.com/mirror/).
+> with [清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/).
 
 If you prefer to skip this step, include the `skipReplaceWrapper` argument when running the script:
 

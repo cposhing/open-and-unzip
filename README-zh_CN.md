@@ -30,7 +30,7 @@ uao ${Artifact}.zip
 ### 跳过替换 Wrapper 镜像
 
 > 默认行为：解压完成后，脚本会将 Maven 和 Gradle 的 Wrapper
-> 源替换为 [阿里巴巴开源镜像](https://developer.aliyun.com/mirror/)
+> 源替换为 [清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/)
 
 如需跳过该操作，可在运行命令时添加 `skipReplaceWrapper` 参数：
 
